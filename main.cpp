@@ -10,7 +10,8 @@ int main(){
     Transformaciones t;
     bool flag=true;
     int op;
-    float ValueX = 5.5, ValueY = 8.2;
+    float ValueXi, ValueYi;
+    float ValueXt, ValueYt;
 
     m.StartMatrix();
     while(flag==true){
@@ -26,9 +27,15 @@ int main(){
 
         switch(op){
             case 1:
-            t.setMatrixInit(ValueX, ValueY);
-            t.setMatrixFinal(ValueX+2, ValueY+3);
-            m.ShowMatrix();
+            cout<<"Ingrese las coordenadas iniciales : "<<endl;
+            cin>>ValueXi;
+            cin>>ValueYi;
+            cout<<"Ingrese los valores de Translacion : "<<endl;
+            cin>>ValueXt;
+            cin>>ValueYt;
+            t.setMatrixInit(ValueXi, ValueYi);
+            t.setMatrixFinal(ValueXi+ValueXt, ValueYi+ValueYt);
+            
             flag=false;
             break;
         }

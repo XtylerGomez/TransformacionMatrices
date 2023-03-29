@@ -20,28 +20,23 @@ void Matrix::StartMatrix(){ //llenar una matriz de toda la vida
 }
 
 void Matrix::ShowMatrix(){
-    
-    int xi=t.getInitValueX();
-    int yi=t.getInitValueY();
+    int Size=getSize();
+    int Origin=getOrigen();
 
-    int xf=t.getInitValueX();
-    int yf=t.getFinalValueY();
+    int xi=Origin-getInitValueY();
+    int yi=Origin+getInitValueX();
+
+    int xf=Origin-getFinalValueY();
+    int yf=Origin+getFinalValueX();
 
     //Estas dos lineas son para los colorines, no se como funcionan but it works
     HANDLE hConsole;
     hConsole=GetStdHandle(STD_OUTPUT_HANDLE);
-    int Size=getSize();
-    int Origin=getOrigen();
+
     
     for(int row=0;row<Size;row++){
             for(int col=0;col<Size;col++){
 
-                
-                if(row==Origin||col==Origin){ 
-                    SetConsoleTextAttribute(hConsole, 10);
-                    cout<<" "<<Matrix[row][col]<<" ";
-                    SetConsoleTextAttribute(hConsole, 15);
-                }else
 
                 if(row==xi&&col==yi){
                     SetConsoleTextAttribute(hConsole, 9); 
@@ -51,6 +46,12 @@ void Matrix::ShowMatrix(){
 
                 if(row==xf&&col==yf){
                     SetConsoleTextAttribute(hConsole, 12); 
+                    cout<<" "<<Matrix[row][col]<<" ";
+                    SetConsoleTextAttribute(hConsole, 15);
+                }else
+
+                if(row==Origin||col==Origin){ 
+                    SetConsoleTextAttribute(hConsole, 10);
                     cout<<" "<<Matrix[row][col]<<" ";
                     SetConsoleTextAttribute(hConsole, 15);
                 }
