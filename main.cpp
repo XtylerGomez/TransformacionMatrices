@@ -1,6 +1,6 @@
 #include <iostream>
 #include "src/Matrix.hpp"
-#include "src/Position.hpp"
+#include "src/Escala.hpp"
 #include "src/Transformaciones.hpp"
 
 using namespace std;
@@ -8,10 +8,14 @@ using namespace std;
 int main(){
     Matrix m;
     Transformaciones t;
+    Escala e;
+    
     bool flag=true;
     int op;
-    float ValueXi, ValueYi;
+    float ValueXi, ValueYi, ValueXj, ValueYj;
     float ValueXt, ValueYt;
+    float ValueAng;
+    float ValueXs, ValueYs;
 
     m.StartMatrix();
     while(flag==true){
@@ -45,18 +49,40 @@ int main(){
             cin>>ValueYi;
             t.setMatrixInit(ValueXi, ValueYi);
             cout<<"Ingrese El Angulo de Rotacion: "<<endl;
-            cin>>ValueXt;
+            cin>>ValueAng;
             t.setRotacion(ValueXt);
+
+            flag=false;
+            break;
+
+            case 3:
+            cout<<"Ingrese el Primer Punto : "<<endl;
+            cin>>ValueXi;
+            cin>>ValueYi;
+            e.setPoint1MatrixInit(ValueXi, ValueYi);
+
+            cout<<"Ingrese el Segundo Punto : "<<endl;
+            cin>>ValueXj;
+            cin>>ValueYj;
+            e.setPoint2MatrixInit(ValueXj, ValueYj);
+
+            cout<<"Ingrese el Escalar de los puntos : "<<endl;
+            cin>>ValueXs;
+            cin>>ValueYs;
+            e.setEscala(ValueXs, ValueYs);
+
+            flag=false;
+            break;
+
             case 4:
             flag=false;
+            break;
+
+            default:
+            cout<<"Peppino";
             break;
         }
 
     }
-
-
-    
-    
-    cout<<"Peppino";
 
 }

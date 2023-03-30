@@ -19,18 +19,6 @@ void Transformaciones::setMatrixInit(float _x, float _y){
 
 }
 
-/*void Transformaciones::setMatrixFinal(float _x, float _y){
-    cout<<"Inicio de Matriz Final, valores : "<<_x<<" "<<_y<<endl;
-    MatrixFinal[0][0]=_x;
-    MatrixFinal[1][0]=_y;
-    MatrixFinal[2][0]=1;
-
-    m.SetFinalValueX(_x);
-    m.SetFinalValueY(_y);
-    cout<<"valores ingresados : "<<m.getFinalValueX()<<" "<<m.getFinalValueY()<<endl;
-    m.ShowMatrix();
-    
-}*/
 
 void Transformaciones::setTraslacion(float _xt, float _yt){
 

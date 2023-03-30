@@ -9,7 +9,7 @@
         float MatrixFinal[3][1];
         float MatrixTraslacion[3][3];
         float MatrixRotacion[3][3];
-        float MatrixEscala[3][3];
+        
 
         public :
         void setMatrixInit(float _x, float _y);

@@ -1,6 +1,5 @@
 //Clase de la Matriz
 #include "Matrix.hpp"
-#include "Position.hpp"
 #include "Transformaciones.hpp"
 #include <iostream>
 #include <windows.h>//con esta libreria hago lo de los colores
@@ -8,7 +7,6 @@
 
 using namespace std;
 
-Position p;
 Transformaciones t;
 void Matrix::StartMatrix(){ //llenar una matriz de toda la vida
     int Size=getSize();
