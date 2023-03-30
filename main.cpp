@@ -30,12 +30,24 @@ int main(){
             cout<<"Ingrese las coordenadas iniciales : "<<endl;
             cin>>ValueXi;
             cin>>ValueYi;
+            t.setMatrixInit(ValueXi, ValueYi);
             cout<<"Ingrese los valores de Translacion : "<<endl;
             cin>>ValueXt;
             cin>>ValueYt;
-            t.setMatrixInit(ValueXi, ValueYi);
-            t.setMatrixFinal(ValueXi+ValueXt, ValueYi+ValueYt);
+            t.setTraslacion(ValueXt, ValueYt);
             
+            flag=false;
+            break;
+            
+            case 2:
+            cout<<"Ingrese las coordenadas iniciales : "<<endl;
+            cin>>ValueXi;
+            cin>>ValueYi;
+            t.setMatrixInit(ValueXi, ValueYi);
+            cout<<"Ingrese El Angulo de Rotacion: "<<endl;
+            cin>>ValueXt;
+            t.setRotacion(ValueXt);
+            case 4:
             flag=false;
             break;
         }
